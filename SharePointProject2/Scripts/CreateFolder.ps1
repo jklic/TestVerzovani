@@ -2,7 +2,7 @@
 git fetch
 $status = git status
 
-if($status -like "*Your branch is up to date*" -and $status -like "*nothing to commit*")
+if($status -eq "*Your branch is up to date*" -and $status -eq "*nothing to commit*")
 {
     write-host Update
 }

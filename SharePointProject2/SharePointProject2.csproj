@@ -60,6 +60,7 @@
     <None Include="Package\Package.Template.xml">
       <DependentUpon>Package.package</DependentUpon>
     </None>
+    <None Include="Scripts\CreateFolder.ps1" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Features\" />
@@ -70,4 +71,60 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Target Name="BeforePublish">
+    <Message Text="The name of the publish profile is BeforePublish" Importance="High" />
+    <Exec Command="C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -file $(ProjectDir)Scripts\CreateFolder.ps1" />
+    <!--<Message Text="$(command)"/>-->
+  </Target>
+  <!--<Target Name="PrePublish" BeforeTargets="Publish">
+    <Message Text="The name of the publish profile is AfterPublish" Importance="High"/>
+    <Exec Command="C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -file $(ProjectDir)Scripts\CreateFolder.ps1"/>
+  </Target>-->
+  <!--<Target Name="CustomPostPublishActions" AfterTargets="GatherAllFilesToPublish">
+    <Message Text="This is custom target" Importance="high" />
+    <Exec Command="C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -file $(ProjectDir)Scripts\CreateFolder.ps1"/>
+  </Target>-->
+  <!--<Target Name="AfterPublish">
+    <Warning Text="publish warning 1" Importance="High"/>
+    <Exec Command="C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -file $(ProjectDir)Scripts\CreateFolder.ps1"/>
+  </Target>-->
+  <!--<Target Name="MSDeployPublish">
+    <Warning Text="publish warning 1" />
+    <Exec Command="%windir%\sysnative\windowspowershell\v1.0\powershell -file “$(ProjectDir)\Scripts\CreateFolder.ps1"/>
+  </Target>
+  
+  <Target Name="CustomTarget" AfterTargets="AfterPublish">
+    <Warning Text="publish warning 2" />
+    <Exec Command="%windir%\sysnative\windowspowershell\v1.0\powershell -file “$(ProjectDir)\Scripts\CreateFolder.ps1"/>
+  </Target>
+  
+  <Target Name="Moose" AfterTargets="GatherAllFilesToPublish" >
+    <Message Importance="high" Text="***Moooooooooooooooose***" />
+    <Exec Command="%windir%\sysnative\windowspowershell\v1.0\powershell -file “$(ProjectDir)\Scripts\CreateFolder.ps1"/>
+  </Target>
+  
+  <Target Name="CustomPostPublishActions" AfterTargets="MSDeployPublish" >
+    <Exec Command="echo Post-PUBLISH event: Active configuration is: $(ConfigurationName)" />
+  </Target>-->
+  <!--<Target Name="BeforeBuild">
+    <Message Text="Should run before build1" Importance="High" />
+    <Exec Command="C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -file $(ProjectDir)Scripts\CreateFolder.ps1"/>
+  </Target>-->
+  <!--<Target Name="AfterPublish">
+    <Message Text="Should run after build" Importance="High" />
+    <Exec Command="C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -file '$(ProjectDir)Scripts\CreateFolder.ps1'"/>
+  </Target>
+
+  <Target Name="MyCustomTask" BeforeTargets="CoreBuild" >
+    <Message Text="Should run before build" Importance="High" />
+    <Exec Command="C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -file '$(ProjectDir)Scripts\CreateFolder.ps1'"/>
+  </Target>
+
+  -->
+  <!-- Replaces AfterBuild target -->
+  <!--
+  <Target Name="AnotherCustomTarget" AfterTargets="CoreCompile">
+    <Message Text="Should run after build" Importance="High" />
+    <Exec Command="C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -file '$(ProjectDir)Scripts\CreateFolder.ps1'"/>
+  </Target>-->
 </Project>

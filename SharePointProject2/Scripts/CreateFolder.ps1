@@ -12,7 +12,7 @@ if($status -like "*Your branch is up to date*" -and $status -like "*nothing to c
 
 	if($lastCommit -notlike "tag: ")
 	{
-		return 2
+		exit 2
 		ForEach ($line in $($gitlog -split "`r`n"))
 		{
 			if($line -like "*tag: *")

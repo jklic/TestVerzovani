@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace SharePointProject2
 {
-    public class Version
+    public static class Version
     {
-        public string Verze { get; } = "1.0";
+        public static string Verze { get; } = "1.0";
     }
 }

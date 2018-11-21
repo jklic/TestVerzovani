@@ -70,6 +70,7 @@
       <DependentUpon>Package.package</DependentUpon>
     </None>
     <None Include="Scripts\CreateFolder.ps1" />
+    <None Include="Scripts\PreBuild.ps1" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

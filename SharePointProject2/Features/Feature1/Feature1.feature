@@ -1,3 +1,2 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<feature deploymentPath="$SharePoint.Project.FileNameWithoutExtension$_$SharePoint.Feature.FileNameWithoutExtension$" title="SharePointProject2 Feature1" dslVersion="1.0.0.0" Id="1a12e350-abc1-4fab-9c8f-4c7b325f7fa0" featureId="1a12e350-abc1-4fab-9c8f-4c7b325f7fa0" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/FeatureModel">
-</feature>
+<feature xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="1a12e350-abc1-4fab-9c8f-4c7b325f7fa0" featureId="1a12e350-abc1-4fab-9c8f-4c7b325f7fa0" imageUrl="" scope="Site" solutionId="00000000-0000-0000-0000-000000000000" title="SharePointProject2 Feature1" version="" deploymentPath="$SharePoint.Project.FileNameWithoutExtension$_$SharePoint.Feature.FileNameWithoutExtension$" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/FeatureModel" />

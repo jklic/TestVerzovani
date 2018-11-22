@@ -2,6 +2,9 @@
 
 function GetLastTag($gitlog)
 {
+	$oneTagOnly = "(tag: [0-9.]+),"
+	$moreTags = "(\(tag: [0-9.]+\))"
+
     $tag = ""
     ForEach ($line in $($gitlog -split "`r`n"))
 	{
@@ -22,12 +25,46 @@ function GetLastTag($gitlog)
                 
             if ($tag -ne "" -and $tag -ne $null)
             {
-                $tag = $tag -replace "\(tag: ",""
+				$tag = $tag -replace "\(",""
+                $tag = $tag -replace "tag: ",""
                 $tag = $tag -replace ",",""
                 $tag = $tag -replace "\)",""
                 break
 			}
 		}
     }
-    return $tag
+    return [version]$tag
+}
+
+function GetVersion 
+{
+	$VersionNumberRegex = "([0-9]+.[0-9]+.[0-9]+.[0-9]+)"
+
+	try 
+	{
+		$file = (Get-Content .\Version.cs)
+		$version = [regex]::Matches($file, $VersionNumberRegex)
+		if($version -ne "" -and $version -ne $null)
+		{
+			$version = [version]$version.groups[0].Value
+		}
+	}
+	catch
+	{
+		return $null
+	}
+	return $version
+}
+
+function editVersion($NewVersion)
+{
+	$VersionNumberRegex = "([0-9]+.[0-9]+.[0-9]+.[0-9]+)"
+
+	$version = GetVersion
+
+	try 
+	{
+			(Get-Content .\Version.cs) -replace $version, $NewVersion | Out-File .\Version.cs
+	}
+	catch{}
 }

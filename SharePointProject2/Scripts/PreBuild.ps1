@@ -1,49 +1,29 @@
 
-git fetch
-$status = git status
+$path = (Get-Location).Path + "\Scripts\Functions.ps1"
+. ($path)
+
+# . C:\Users\klic\source\repos\SharePointProject2\SharePointProject2\Scripts\Functions.ps1
+
+# git fetch
+# $status = git status
 
 
-    $gitlog = git log --pretty=oneline --decorate=short
-    $lastCommit = ""
-	$lastCommit = $($gitlog -split "`r`n")[0]
+# $gitlog = git log --pretty=oneline --decorate=short
+# $lastCommit = ""
+# $lastCommit = $($gitlog -split "`r`n")[0]
 
-	$oneTagOnly = "(\(tag: [0-9.]+),"
-	$moreTags = "(\(tag: [0-9.]+\))"
+# if($lastCommit -notlike "*tag: *")
+# {
+# 	$tag = GetLastTag $gitlog
 
-	if($lastCommit -notlike "*tag: *")
-	{
-		ForEach ($line in $($gitlog -split "`r`n"))
-		{
-			if($line -like "*tag: *")
-			{
-				$tag = ""
-				$tag = [regex]::Matches($line, $oneTagOnly)
-                if($tag.Count -eq 0)
-                {
-                    $tag = [regex]::Matches($line, $moreTags)
-                    if($tag.Count -eq 0)
-                    {
-                        continue
-                    }
-                }
+# 	editVersion
 
-                $tag = $tag[0].Value
-                
-                if ($tag -ne "" -and $tag -ne $null)
-                {
-                    $tag = $tag -replace "\(tag: ",""
-                    $tag = $tag -replace ",",""
-                    $tag = $tag -replace "\)",""
-                    break
-			    }
-			}
-		}
-		if($tag -eq "" -or $tag -eq $null)
-		{
-			exit 3
-		}
-		else
-		{
-            git tag $tag
-		}
-	}
+# 	if($tag -eq "" -or $tag -eq $null)
+# 	{
+# 		exit 3
+# 	}
+# 	else
+# 	{
+# 	    git tag $tag
+# 	}
+# }

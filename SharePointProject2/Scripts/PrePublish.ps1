@@ -10,35 +10,30 @@ $status = git status
 if($status -like "*Your branch is up to date*" -and $status -like "*nothing to commit*")
 {
 	#Získám poslední TAG
-    $gitlog = git log --pretty=oneline --decorate=short
-	$tag = GetLastTag $gitlog
+	$gitTags = git tag
+	$tag = getHighestTag $gitTags
 
-	if($tag -eq "" -or $tag -eq $null)
+	if($tag -eq "0.0.0.1")
 	{
-		#Žádný TAG neexistuje - končím chybou ? přiřadit 1.0.0.0 ????
-		exit 2
+		#Žádný TAG neexistuje - přiřadit 1.0.0.0
+		$newTag = "1.0.0.0"
+		
 	}
-	else 
+	else
 	{
 		#Zjistím jestli poslední commit má TAG
 		$lastCommit = ""
+		$gitlog = git log --pretty=oneline --decorate=short
 		$lastCommit = $($gitlog -split "`r`n")[0]
 		
 		if($lastCommit -notlike "*tag: *")
 		{
-			#nemá - přiřadím TAG + verzi 
+			#nemá - přiřadím TAG
 			$newTag = "{0}.{1}.{2}.{3}" -f $tag.Major, $tag.Minor, $tag.Build, ($tag.Revision + 1)
-			editVersion $newTag
-			git tag $newTag
-			git push --tags
-		}
-		else
-		{
-			#má - upravím verzi
-			$newTag = "{0}.{1}.{2}.{3}" -f $tag.Major, $tag.Minor, $tag.Build, $tag.Revision
-			editVersion $newTag		
 		}
 	}
+	git tag $newTag
+	git push --tags
 }
 else
 {

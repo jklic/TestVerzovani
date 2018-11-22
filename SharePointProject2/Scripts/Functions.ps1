@@ -36,6 +36,20 @@ function GetLastTag($gitlog)
     return [version]$tag
 }
 
+function getHighestTag($gitTags)
+{
+	[version]$highestTag = "0.0.0.1"
+	foreach($tag1 in $gitTags)
+	{
+		$tag1 = [version]$tag1
+		if($tag1 -gt $highestTag)
+		{
+			$highestTag = $tag1
+		}
+	}
+	return $highestTag
+}
+
 function GetVersion 
 {
 	$VersionNumberRegex = "([0-9]+.[0-9]+.[0-9]+.[0-9]+)"

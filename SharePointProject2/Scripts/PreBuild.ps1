@@ -2,28 +2,19 @@
 $path = (Get-Location).Path + "\Scripts\Functions.ps1"
 . ($path)
 
-# . C:\Users\klic\source\repos\SharePointProject2\SharePointProject2\Scripts\Functions.ps1
+git fetch
+$gitTags = git tag
+$tag = getHighestTag $gitTags
 
-# git fetch
-# $status = git status
+if($tag.ToString() -eq "0.0.0.1")
+{
+    #Žádný TAG neexistuje - přiřadit 1.0.0.0
+    $newTag = "1.0.0.0"
+}
+else
+{
+    #TAG neexistuje - zvýším verzi
+	$newTag = "{0}.{1}.{2}.{3}" -f $tag.Major, $tag.Minor, $tag.Build, ($tag.Revision + 1)
+}
 
-
-# $gitlog = git log --pretty=oneline --decorate=short
-# $lastCommit = ""
-# $lastCommit = $($gitlog -split "`r`n")[0]
-
-# if($lastCommit -notlike "*tag: *")
-# {
-# 	$tag = GetLastTag $gitlog
-
-# 	editVersion
-
-# 	if($tag -eq "" -or $tag -eq $null)
-# 	{
-# 		exit 3
-# 	}
-# 	else
-# 	{
-# 	    git tag $tag
-# 	}
-# }
+editVersion $newTag

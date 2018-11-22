@@ -88,8 +88,8 @@
     <Message Text="BeforeLayout(Publish) : Provádím konrolu synchronizace a tagů" Importance="High" />
     <Exec Command="C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -file $(ProjectDir)Scripts\PrePublish.ps1" />
   </Target>
-  <Target Name="BeforeBuild">
+  <!--<Target Name="BeforeBuild">
     <Message Text="BeforeBuild : Provádím konrolu verzování" Importance="High" />
     <Exec Command="C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -file $(ProjectDir)Scripts\PreBuild.ps1" />
-  </Target>
+  </Target>-->
 </Project>

@@ -9,37 +9,31 @@ $status = git status
 #Projekt je syncnutý
 if($status -like "*Your branch is up to date*" -and $status -like "*nothing to commit*")
 {
-	#Získám poslední TAG
-	$gitTags = git tag
-	$tag = getHighestTag $gitTags
-
-	if($tag -eq "0.0.0.1")
+	#Zjistím jestli poslední commit má TAG
+	$gitlog = git log --pretty=oneline --decorate=short
+	$lastCommit = ""
+	$lastCommit = $($gitlog -split "`r`n")[0]
+		
+	if($lastCommit -like "*tag: *")
 	{
-		#Žádný TAG neexistuje - přiřadit 1.0.0.0
-		$newTag = "1.0.0.0"
+		#Získám poslední TAG
+		$tag = GetLastTag $gitlog
+		$version = GetVersion
+		if($tag -ne $version)
+		{
+			Write-Error "Tag a verze se neshodují !"
+			exit 3
+		}
 	}
 	else
 	{
-		#Zjistím jestli poslední commit má TAG
-		$lastCommit = ""
-		$gitlog = git log --pretty=oneline --decorate=short
-		$lastCommit = $($gitlog -split "`r`n")[0]
-		
-		if($lastCommit -notlike "*tag: *")
-		{
-			#nemá - přiřadím TAG
-			$newTag = "{0}.{1}.{2}.{3}" -f $tag.Major, $tag.Minor, $tag.Build, ($tag.Revision + 1)
-		}
-		else
-		{
-			$newTag = "{0}.{1}.{2}.{3}" -f $tag.Major, $tag.Minor, $tag.Build, ($tag.Revision + 1)
-		}
+		Write-Error "Není nastaven tag na commitu"
+		exit 2
 	}
-	git tag $newTag
-	git push --tags
+	
 }
 else
 {
-    write-host
+    Write-Error "Projekt není synchronizovaný !"
     exit 1
 }

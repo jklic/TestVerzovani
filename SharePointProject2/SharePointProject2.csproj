@@ -69,8 +69,8 @@
       <DependentUpon>Package.package</DependentUpon>
     </None>
     <None Include="Scripts\Functions.ps1" />
-    <None Include="Scripts\PreBuild.ps1" />
     <None Include="Scripts\PrePublish.ps1" />
+    <None Include="Scripts\PreBuild.ps1" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -84,10 +84,6 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
-  <Target Name="BeforeBuild">
-    <Message Text="The name of the publish profile is BeforeBuild" Importance="High" />
-    <Exec Command="C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -file $(ProjectDir)Scripts\PreBuild.ps1" />
-  </Target>
   <Target Name="BeforeLayout">
     <Message Text="The name of the publish profile is BeforeLayout" Importance="High" />
     <Exec Command="C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -file $(ProjectDir)Scripts\PrePublish.ps1" />

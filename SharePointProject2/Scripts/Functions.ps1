@@ -41,12 +41,17 @@ function getHighestTag($gitTags)
 	[version]$highestTag = "0.0.0.1"
 	foreach($tag1 in $gitTags)
 	{
-		$tag1 = [version]$tag1
-		if($tag1 -gt $highestTag)
+		try 
 		{
-			$highestTag = $tag1
+			$tag1 = [version]$tag1
+			if($tag1 -gt $highestTag)
+			{
+				$highestTag = $tag1
+			}
 		}
+		catch {}
 	}
+
 	return $highestTag
 }
 

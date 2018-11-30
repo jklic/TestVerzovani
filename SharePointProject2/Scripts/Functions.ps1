@@ -57,12 +57,14 @@ function getHighestTag($gitTags)
 
 function GetVersion 
 {
-	$VersionNumberRegex = "([0-9]+.[0-9]+.[0-9]+.[0-9]+)"
+	$VersionLineRegex = "\[assembly: AssemblyInformationalVersion\(`"([0-9]+.[0-9]+.[0-9]+.[0-9]+)`"\)\]"
+    $VersionNumberRegex = "([0-9]+.[0-9]+.[0-9]+.[0-9]+)"
 
 	try 
 	{
-		$file = (Get-Content .\Version.cs)
-		$version = [regex]::Matches($file, $VersionNumberRegex)
+		$file = (Get-Content .\Properitie\AssemblyInfo.cs)
+		$assemblyVersion = [regex]::Matches($file, $VersionLineRegex)
+        $version = $assemblyVersion = [regex]::Matches($assemblyVersion, $VersionNumberRegex)
 		if($version -ne "" -and $version -ne $null)
 		{
 			$version = [version]$version.groups[0].Value

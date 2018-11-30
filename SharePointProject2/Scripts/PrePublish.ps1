@@ -27,7 +27,7 @@ if($status -like "*Your branch is up to date*" -and $status -like "*nothing to c
 	}
 	else
 	{
-		Write-Error "Není nastaven tag na commitu"
+		Write-Error "Není nastaven tag na commitu !"
 		exit 2
 	}
 	

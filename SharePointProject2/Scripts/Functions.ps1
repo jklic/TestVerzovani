@@ -62,7 +62,7 @@ function GetVersion
 
 	try 
 	{
-		$file = (Get-Content .\Properities\AssemblyInfo.cs)
+		$file = (Get-Content .\Properties\AssemblyInfo.cs)
 		$assemblyVersion = [regex]::Matches($file, $VersionLineRegex)
         $version = $assemblyVersion = [regex]::Matches($assemblyVersion, $VersionNumberRegex)
 		if($version -ne "" -and $version -ne $null)

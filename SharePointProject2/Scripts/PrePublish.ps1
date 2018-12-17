@@ -18,7 +18,7 @@ if($status -like "*Your branch is up to date*" -and $status -like "*nothing to c
 	{
 		#Získám poslední TAG
 		$tag = GetLastTag $gitlog
-		$version = GetVersion
+		$version = GetProductVersion
 		if($tag -ne $version)
 		{
 			Write-Error "Tag a verze se neshodují !"
@@ -30,7 +30,6 @@ if($status -like "*Your branch is up to date*" -and $status -like "*nothing to c
 		Write-Error "Není nastaven tag na commitu !"
 		exit 2
 	}
-	
 }
 else
 {

@@ -55,9 +55,31 @@ function getHighestTag($gitTags)
 	return $highestTag
 }
 
-function GetVersion 
+function GetProductVersion 
 {
 	$VersionLineRegex = "\[assembly: AssemblyInformationalVersion\(`"([0-9]+.[0-9]+.[0-9]+.[0-9]+)`"\)\]"
+    $VersionNumberRegex = "([0-9]+.[0-9]+.[0-9]+.[0-9]+)"
+
+	try 
+	{
+		$file = (Get-Content .\Properties\AssemblyInfo.cs)
+		$assemblyVersion = [regex]::Matches($file, $VersionLineRegex)
+        $version = $assemblyVersion = [regex]::Matches($assemblyVersion, $VersionNumberRegex)
+		if($version -ne "" -and $version -ne $null)
+		{
+			$version = [version]$version.groups[0].Value
+		}
+	}
+	catch
+	{
+		return $null
+	}
+	return $version
+}
+
+function GetFileVersion
+{
+	$VersionLineRegex = "\[assembly: AssemblyFileVersion\(`"([0-9]+.[0-9]+.[0-9]+.[0-9]+)`"\)\]"
     $VersionNumberRegex = "([0-9]+.[0-9]+.[0-9]+.[0-9]+)"
 
 	try 
@@ -81,7 +103,7 @@ function editVersion($NewVersion)
 {
 	$VersionNumberRegex = "([0-9]+.[0-9]+.[0-9]+.[0-9]+)"
 
-	$version = GetVersion
+	$version = GetProductVersion
 
 	try 
 	{

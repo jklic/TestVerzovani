@@ -69,6 +69,7 @@
       <DependentUpon>Package.package</DependentUpon>
     </None>
     <None Include="Scripts\Functions.ps1" />
+    <None Include="Scripts\PostPublish.ps1" />
     <None Include="Scripts\PrePublish.ps1" />
     <None Include="Scripts\PreBuild.ps1" />
   </ItemGroup>
@@ -85,12 +86,7 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
   <Target Name="BeforeLayout">
-    <Message Text="BeforeLayout(Publish) : Provádím konrolu synchronizace a tagů" Importance="High"/>
-    <Exec Command="C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -file $(ProjectDir)Scripts\PrePublish.ps1"  ConsoleToMSBuild="true"/>
-    <!--<Output TaskParameter="ConsoleOutput" PropertyName="OutputOfExec" />-->
+    <Message Text="BeforeLayout(Publish) : Provádím konrolu synchronizace a tagů" Importance="High" />
+    <Exec Command="C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -file $(ProjectDir)Scripts\PrePublish.ps1" ConsoleToMSBuild="true" />
   </Target>
-  <!--<Target Name="BeforeBuild">
-    <Message Text="BeforeBuild : Provádím konrolu verzování" Importance="High" />
-    <Exec Command="C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -file $(ProjectDir)Scripts\PreBuild.ps1" />
-  </Target>-->
 </Project>

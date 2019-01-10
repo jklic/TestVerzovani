@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E3FA9B51-7CF8-4219-BB1E-8BC65423EC3C}</ProjectGuid>
+    <ProjectGuid>{083AE83A-D484-4828-9125-7EDF6B736F4C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SharePointProject5</RootNamespace>
-    <AssemblyName>SharePointProject5</AssemblyName>
+    <RootNamespace>SharePointProject7</RootNamespace>
+    <AssemblyName>SharePointProject7</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <TargetOfficeVersion>15.0</TargetOfficeVersion>
     <FileAlignment>512</FileAlignment>
@@ -55,7 +55,7 @@
   <ItemGroup>
     <None Include="key.snk" />
     <None Include="Package\Package.package">
-      <PackageId>{d813c1c3-ce07-449e-a595-b7c116b41bb4}</PackageId>
+      <PackageId>{f7e8c4ba-d5dd-4f39-a4af-6312c94fc60e}</PackageId>
     </None>
     <None Include="Package\Package.Template.xml">
       <DependentUpon>Package.package</DependentUpon>

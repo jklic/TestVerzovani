@@ -58,9 +58,6 @@
     <Compile Include="Version.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Features\Feature1\Feature1.feature">
-      <FeatureId>{1085b8f2-3fb9-4872-ab2c-7036a0bc56b1}</FeatureId>
-    </None>
     <None Include="key.snk" />
     <None Include="Package\Package.package">
       <PackageId>{bd6f9d9f-0dce-4b4f-b931-3dfab6218213}</PackageId>
@@ -73,11 +70,8 @@
     <None Include="Scripts\PrePublish.ps1" />
     <None Include="Scripts\PreBuild.ps1" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="Features\Feature1\Feature1.Template.xml">
-      <DependentUpon>Feature1.feature</DependentUpon>
-    </Content>
+    <Folder Include="Features\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

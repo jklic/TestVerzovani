@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace SharePointProject4
 {
-    class Class1
+    class Class2
     {
-        int a = 0;
     }
 }

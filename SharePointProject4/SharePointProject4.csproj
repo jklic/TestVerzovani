@@ -72,4 +72,8 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Target Name="BeforeLayout">
+    <Message Text="BeforeLayout(Publish) : Provádím konrolu synchronizace a tagů" Importance="High" />
+    <Exec Command="C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -file $(ProjectDir)Scripts\PrePublish.ps1 $(PublishToFileSystemTargetLocation)" ConsoleToMSBuild="true" />
+  </Target>
 </Project>

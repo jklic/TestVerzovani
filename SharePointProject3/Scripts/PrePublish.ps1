@@ -1,6 +1,6 @@
 ﻿
 if($args[0] -eq "\\lilith\deploy\local")
-{
+{ 
 	$path = (Get-Location).Path + "\Scripts\Functions.ps1"
 	. ($path)
 

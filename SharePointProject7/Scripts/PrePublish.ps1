@@ -1,5 +1,5 @@
 ﻿
-if($args[0] -eq "\\lilith.qualitymanagement.local\deploy")
+if($args[0] -eq "\\lilith\deploy\local")
 {
 	$gitFolder = (Get-Location).Path
 	$path = (Get-Location).Path + "\Scripts\Functions.ps1"

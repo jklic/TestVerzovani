@@ -5,10 +5,6 @@ VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePointProject2", "SharePointProject2\SharePointProject2.csproj", "{371595EA-F762-452F-80BA-0300CF231DB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePointProject3", "SharePointProject3\SharePointProject3.csproj", "{4FB38C27-E48F-485A-8ACF-7DF0198C490C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePointProject4", "SharePointProject4\SharePointProject4.csproj", "{820CD064-3654-426B-AC46-C14F31377715}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePointProject5", "SharePointProject5\SharePointProject5.csproj", "{E3FA9B51-7CF8-4219-BB1E-8BC65423EC3C}"
 EndProject
 Global
@@ -23,18 +19,6 @@ Global
 		{371595EA-F762-452F-80BA-0300CF231DB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{371595EA-F762-452F-80BA-0300CF231DB2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{371595EA-F762-452F-80BA-0300CF231DB2}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{4FB38C27-E48F-485A-8ACF-7DF0198C490C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4FB38C27-E48F-485A-8ACF-7DF0198C490C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4FB38C27-E48F-485A-8ACF-7DF0198C490C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{4FB38C27-E48F-485A-8ACF-7DF0198C490C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4FB38C27-E48F-485A-8ACF-7DF0198C490C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4FB38C27-E48F-485A-8ACF-7DF0198C490C}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{820CD064-3654-426B-AC46-C14F31377715}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{820CD064-3654-426B-AC46-C14F31377715}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{820CD064-3654-426B-AC46-C14F31377715}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{820CD064-3654-426B-AC46-C14F31377715}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{820CD064-3654-426B-AC46-C14F31377715}.Release|Any CPU.Build.0 = Release|Any CPU
-		{820CD064-3654-426B-AC46-C14F31377715}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{E3FA9B51-7CF8-4219-BB1E-8BC65423EC3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E3FA9B51-7CF8-4219-BB1E-8BC65423EC3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3FA9B51-7CF8-4219-BB1E-8BC65423EC3C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU

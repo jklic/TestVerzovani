@@ -12,7 +12,8 @@ if($args[0] -eq "\\lilith\deploy\local")
     if($status -like "*Your branch is up to date*" -and $status -like "*nothing to commit*")
     {
         #Zjistím jestli poslední commit má TAG
-        $gitlog = git log --pretty=oneline --decorate=short
+		$gitFolder = (Get-Location).Path
+        $gitlog = git log -- $gitFolder --pretty=oneline --decorate=short
         $lastCommit = ""
         $lastCommit = $($gitlog -split "`r`n")[0]
 		

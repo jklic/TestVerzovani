@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePointProject2", "SharePointProject2\SharePointProject2.csproj", "{371595EA-F762-452F-80BA-0300CF231DB2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePointProject3", "SharePointProject3\SharePointProject3.csproj", "{FAB9B654-18DC-4A7C-AC20-CB2DFB217E3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePointProject4", "SharePointProject4\SharePointProject4.csproj", "{FDE5F806-8634-4DD1-A070-B8E815AA7C0C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +21,14 @@ Global
 		{371595EA-F762-452F-80BA-0300CF231DB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{371595EA-F762-452F-80BA-0300CF231DB2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{371595EA-F762-452F-80BA-0300CF231DB2}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{FAB9B654-18DC-4A7C-AC20-CB2DFB217E3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAB9B654-18DC-4A7C-AC20-CB2DFB217E3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAB9B654-18DC-4A7C-AC20-CB2DFB217E3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAB9B654-18DC-4A7C-AC20-CB2DFB217E3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDE5F806-8634-4DD1-A070-B8E815AA7C0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDE5F806-8634-4DD1-A070-B8E815AA7C0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDE5F806-8634-4DD1-A070-B8E815AA7C0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDE5F806-8634-4DD1-A070-B8E815AA7C0C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

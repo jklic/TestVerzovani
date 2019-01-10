@@ -3,16 +3,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{820CD064-3654-426B-AC46-C14F31377715}</ProjectGuid>
+    <ProjectGuid>{E3FA9B51-7CF8-4219-BB1E-8BC65423EC3C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SharePointProject4</RootNamespace>
-    <AssemblyName>SharePointProject4</AssemblyName>
+    <RootNamespace>SharePointProject5</RootNamespace>
+    <AssemblyName>SharePointProject5</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <TargetOfficeVersion>15.0</TargetOfficeVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <IncludeAssemblyInPackage>False</IncludeAssemblyInPackage>
+    <SandboxedSolution>False</SandboxedSolution>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -50,20 +50,16 @@
     <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Class2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="key.snk" />
     <None Include="Package\Package.package">
-      <PackageId>{0423784f-f5d6-4268-92d2-f00e42717e6a}</PackageId>
+      <PackageId>{d813c1c3-ce07-449e-a595-b7c116b41bb4}</PackageId>
     </None>
     <None Include="Package\Package.Template.xml">
       <DependentUpon>Package.package</DependentUpon>
     </None>
-    <None Include="Scripts\Functions.ps1" />
-    <None Include="Scripts\PrePublish.ps1" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Features\" />
@@ -74,8 +70,4 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
-  <!--<Target Name="BeforeLayout">
-    <Message Text="BeforeLayout(Publish) : Provádím konrolu synchronizace a tagů" Importance="High" />
-    <Exec Command="C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -file $(ProjectDir)Scripts\PrePublish.ps1 $(PublishToFileSystemTargetLocation)" ConsoleToMSBuild="true" />
-  </Target>-->
 </Project>

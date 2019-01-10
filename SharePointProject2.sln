@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePointProject3", "Share
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePointProject4", "SharePointProject4\SharePointProject4.csproj", "{820CD064-3654-426B-AC46-C14F31377715}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePointProject5", "SharePointProject5\SharePointProject5.csproj", "{E3FA9B51-7CF8-4219-BB1E-8BC65423EC3C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,12 @@ Global
 		{820CD064-3654-426B-AC46-C14F31377715}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{820CD064-3654-426B-AC46-C14F31377715}.Release|Any CPU.Build.0 = Release|Any CPU
 		{820CD064-3654-426B-AC46-C14F31377715}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{E3FA9B51-7CF8-4219-BB1E-8BC65423EC3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3FA9B51-7CF8-4219-BB1E-8BC65423EC3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3FA9B51-7CF8-4219-BB1E-8BC65423EC3C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{E3FA9B51-7CF8-4219-BB1E-8BC65423EC3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3FA9B51-7CF8-4219-BB1E-8BC65423EC3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3FA9B51-7CF8-4219-BB1E-8BC65423EC3C}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

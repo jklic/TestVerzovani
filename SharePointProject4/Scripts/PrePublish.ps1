@@ -3,16 +3,16 @@ if($args[0] -eq "\\lilith\deploy\local")
 {
 	$path = (Get-Location).Path + "\Scripts\Functions.ps1"
 	. ($path)
+	$gitFolder = (Get-Location).Path
 
     #Podívám se jestli je něco nového na serveru, a jestli nemám něco nepushnutého
     git fetch
-    $status = git status
+    $status = git status -- $gitFolder
     
     #Projekt je syncnutý
     if($status -like "*Your branch is up to date*" -and $status -like "*nothing to commit*")
     {
         #Zjistím jestli poslední commit má TAG
-		$gitFolder = (Get-Location).Path
         $gitlog = git log --pretty=oneline --decorate=short -- $gitFolder
         $lastCommit = ""
         $lastCommit = $($gitlog -split "`r`n")[0]

@@ -60,8 +60,6 @@
     <None Include="Package\Package.Template.xml">
       <DependentUpon>Package.package</DependentUpon>
     </None>
-    <None Include="Scripts\Functions.ps1" />
-    <None Include="Scripts\PrePublish.ps1" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Features\" />
@@ -74,6 +72,6 @@
   <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
   <Target Name="BeforeLayout">
     <Message Text="BeforeLayout(Publish) : Provádím konrolu synchronizace a tagů" Importance="High" />
-    <Exec Command="C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -file $(ProjectDir)Scripts\PrePublish.ps1 $(PublishToFileSystemTargetLocation)" ConsoleToMSBuild="true" />
+    <Exec Command="C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -file ..\Scripts\PrePublish.ps1 $(PublishToFileSystemTargetLocation)" ConsoleToMSBuild="true" />
   </Target>
 </Project>
